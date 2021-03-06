@@ -31,16 +31,18 @@ False
 # Implement the below function and run the program
 
 def are_anagrams(word1, word2):
-    pass
-
-
+    if(sorted(word1) == sorted(word2)):
+        return True 
+    else:
+        return False      
+  
 class TestAreAnagrams(unittest.TestCase):
 
     def test_1(self):
         self.assertEqual(are_anagrams('listen', 'silent'), True)
 
     def test_2(self):
-        self.assertEqual(are_anagrams('“bedroom”', 'bathroom'), False)
+        self.assertEqual(are_anagrams('â€œbedroomâ€', 'bathroom'), False)
 
     def test_3(self):
         self.assertEqual(are_anagrams('madam', 'madam'), True)
@@ -49,5 +51,5 @@ class TestAreAnagrams(unittest.TestCase):
         self.assertEqual(are_anagrams('dabc', 'akbc'), False)
 
 
-if __name__ == '__main__':
+if _name_ == '_main_':
     unittest.main(verbosity=2)
